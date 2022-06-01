@@ -1,0 +1,23 @@
+@import "src/styling-constants/colors.scss";
+
+.genTitle {
+  position: relative;
+
+  // margin: 0px;
+
+  font-weight: 700;
+  font-size: calc(2 * var(--glo7-font-size));
+  // margin-bottom: 24px;
+  // margin-top: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: $blackyBlue;
+
+  // .wrapSpan {
+  //   //
+  // }
+
+  @media (max-width: 500px) {
+    font-size: calc(1.5 * var(--glo7-font-size));
+  }
+}

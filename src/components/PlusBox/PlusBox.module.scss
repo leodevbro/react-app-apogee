@@ -1,0 +1,209 @@
+@import "src/styling-constants/colors.scss";
+
+// $optimalWidthOfContent: 246px;
+// $optimalHeightOfContent: 150px;
+
+.ground {
+  --optimal-width: 246px;
+  --optimal-height: 150px;
+  --max-width: calc(100% - 44px);
+  max-width: var(--max-width);
+  // border: 1px solid blue;
+
+  transition: clip-path 0.4s ease-in-out;
+
+  &.hid {
+    &.dirleft {
+      clip-path: inset(calc(100% - 40px) 0% 0% calc(100% - 40px) round 20px);
+
+      @media (max-width: 800px) {
+        clip-path: inset(calc(100% - 34px) 0% 0% calc(100% - 34px) round 17px);
+      }
+    }
+
+    &.dirright {
+      clip-path: inset(calc(100% - 40px) calc(100% - 40px) 0% 0% round 20px);
+
+      @media (max-width: 800px) {
+        clip-path: inset(calc(100% - 34px) calc(100% - 34px) 0% 0% round 17px);
+      }
+    }
+  }
+
+  &.vis {
+    clip-path: inset(0% 0% 0% 0% round 20px);
+
+    @media (max-width: 800px) {
+      clip-path: inset(0% 0% 0% 0% round 17px);
+    }
+
+    // &.dirleft {
+    //   clip-path: inset(0% 0% 0% 0% round 20px);
+    // }
+
+    // &.dirRight {
+    //   clip-path: inset(0% 0% 0% 0% round 20px);
+    // }
+  }
+
+  .content {
+    max-width: 246px;
+    background-color: white;
+    // border: 1px solid red;
+    border-radius: 20px;
+
+    @media (max-width: 800px) {
+      border-radius: 17px;
+    }
+
+    overflow: hidden;
+
+    // transition: max-width 0.5s ease-in-out, max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+
+    // &.hid {
+    //   max-width: 40px;
+    //   min-width: 40px;
+    //   max-height: 40px;
+    //   min-height: 40px;
+    //   // opacity: 0;
+
+    //   @media (max-width: 800px) {
+    //     max-width: 34px;
+    //     min-width: 34px;
+    //     max-height: 34px;
+    //     min-height: 34px;
+    //   }
+    // }
+
+    &.vis {
+      // max-width: 400px;
+      // max-height: 300px;
+      // opacity: 1;
+    }
+
+    .contentIn {
+      overflow-wrap: anywhere;
+      padding: 20px;
+      padding-bottom: 4px;
+
+      min-width: 50px;
+      min-height: var(--optimal-height);
+
+      // max-width: var(--max-width);
+      // max-height: calc(var(--optimal-height) + 50px);
+
+      transition: opacity 0.4s ease-out;
+
+      &.vis {
+        opacity: 1;
+      }
+
+      &.hid {
+        opacity: 0;
+      }
+
+      .up {
+        display: flex;
+        flex-wrap: nowrap;
+        column-gap: 16px;
+        margin-bottom: 26px;
+
+        .left {
+          .plankImg {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+          }
+        }
+
+        .right {
+          .infoTitle {
+            color: $black17;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+
+            margin-bottom: 6px;
+          }
+
+          .infoDetails,
+          .infoDetailsMore {
+            color: rgb(150, 150, 150);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      .down {
+        position: absolute;
+        bottom: 0px;
+        // left: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        justify-content: center;
+        color: black;
+
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 800px) {
+          height: 34px;
+        }
+
+        &.dirright {
+          left: calc(40px + 7px);
+          // border: 1px solid red;
+        }
+
+        .shopButton {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .plusButton {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+
+    background-color: white;
+
+    @media (max-width: 800px) {
+      width: 34px;
+      height: 34px;
+      border-radius: 17px;
+    }
+
+    color: rgb(98, 98, 98);
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(22, 22, 22);
+    }
+
+    bottom: 0px;
+
+    &.dirleft {
+      right: 0px;
+    }
+
+    &.dirRight {
+      left: 0px;
+    }
+  }
+}

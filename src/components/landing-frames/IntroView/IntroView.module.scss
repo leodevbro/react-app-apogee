@@ -1,0 +1,199 @@
+@import "src/styling-constants/colors.scss";
+
+.ground {
+  padding-left: clamp(20px, 5%, 96px);
+  padding-right: clamp(20px, 5%, 96px);
+  margin-bottom: 120px;
+
+  @media (max-width: 800px) {
+    margin-bottom: 80px;
+  }
+
+  .ground2 {
+    height: 1200px;
+  }
+
+  .wrapHelp {
+    width: 100%;
+    position: sticky;
+    top: 0;
+
+    .topHelp {
+      height: 80px;
+
+      @media (max-width: 1000px) {
+        height: 60px;
+      }
+
+      @media (max-width: 500px) {
+        height: 40px;
+      }
+
+      @media (max-height: 500px) {
+        height: 26px;
+      }
+    }
+  }
+
+  .mainBox {
+    // height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    // border: 1px solid red;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @media (max-width: 400px) {
+      border-radius: 8px;
+    }
+
+    min-height: clamp(380px, 50vw, 840px);
+
+    &:hover {
+      .introDescription {
+        // clip-path: inset(0% 100% 0% 0% round 0px);
+
+        @media (max-width: 700px) {
+          // clip-path: inset(0% 0% 100% 0% round 0px);
+        }
+      }
+    }
+
+    .introImg {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      object-fit: cover;
+      // border-radius: 0;
+      // object-position: 70% 50%;
+      // object-position: 80% 0;
+
+      @media (max-width: 800px) {
+        // object-position: 70px 82%;
+      }
+    }
+
+    .introDescription {
+      background-color: $coolSkin;
+      width: 300px;
+      flex-grow: 2.5;
+      flex-shrink: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 5%;
+
+      // transition: clip-path 0.5s ease-in-out;
+      clip-path: inset(-1% -1% -1% -1% round 0px);
+
+      .textView {
+        // width: calc(100% - 10%);
+
+        .title {
+          margin-bottom: 24px;
+
+          font-weight: 500;
+          font-size: 84px;
+          line-height: 92px;
+          color: #111111;
+
+          @media (max-width: 1100px) {
+            font-size: 40px;
+            line-height: 48px;
+
+            margin-bottom: 16px;
+          }
+        }
+
+        .desc {
+          color: $black17;
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 64px;
+          letter-spacing: 0.02em;
+
+          @media (max-width: 1100px) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+          }
+        }
+
+        .more {
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: 500;
+
+          letter-spacing: 0.02em;
+
+          margin-bottom: 35px;
+
+          @media (max-width: 1100px) {
+            font-size: 14px;
+            line-height: 16px;
+          }
+
+          .learnMore {
+            &:hover {
+              cursor: pointer;
+            }
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 2px;
+              position: absolute;
+              bottom: -6px;
+              left: 0px;
+              background-color: $black17;
+            }
+          }
+        }
+      }
+    }
+
+    .pBox {
+      min-height: 300px;
+      min-width: 41%;
+      width: 300px;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      // .introImg {
+      //   height: 100%;
+      //   width: 100%;
+      //   object-fit: cover;
+      //   object-position: 80% 0;
+      // }
+
+      .plusBox {
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+
+        // &:hover {
+        //   cursor: pointer;
+        // }
+
+        @media (max-width: 1100px) {
+          right: 20px;
+          // left: 20px;
+          bottom: 20px;
+        }
+
+        // .myPlusButton {
+        //   @media (max-width: 1100px) {
+        //     right: initial;
+        //     left: 0px;
+        //   }
+        // }
+      }
+    }
+  }
+}

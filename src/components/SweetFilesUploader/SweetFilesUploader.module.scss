@@ -1,0 +1,131 @@
+@import "src/styling-constants/colors.scss";
+@import "src/styling-constants/coolEffects.scss";
+
+.ground {
+  position: relative;
+  background-color: white;
+  // border: 1px solid blue;
+  // padding: 20px;
+
+  .uploadingFiles {
+    // border: 1px solid green;
+
+    .fileBox {
+      background: rgba(9, 103, 210, 0.1);
+      border-radius: 6px;
+      min-height: 115px;
+
+      margin-bottom: 10px;
+      flex-wrap: nowrap;
+
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        // border: 1px solid pink;
+        flex-grow: 1;
+        padding-left: 16px;
+
+        display: flex;
+        align-items: center;
+        column-gap: 14px;
+
+        .preview {
+          width: 80px;
+          height: 80px;
+          border-radius: 12px;
+          overflow: hidden;
+          flex-shrink: 0;
+
+          .imagePreview {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+          }
+        }
+
+        .fileName {
+          color: black;
+          font-size: calc(0.875 * var(--glo7-font-size));
+          font-weight: 500;
+          overflow-wrap: anywhere;
+        }
+      }
+
+      .right {
+        min-width: 60px;
+        // border: 1px solid rgb(194, 125, 211);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .closeSvgWrap {
+          width: 28px;
+          height: 28px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 100px;
+
+          &:hover {
+            box-shadow: $coolBlueShadow;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .buttonWrapToUploadFiles {
+    overflow: hidden;
+    padding: 4px;
+    // min-height: 115px;
+
+    // .input {
+    //   // border: 1px solid green;
+    //   // width: 100%;
+    // }
+
+    .inputButton {
+      // border: 1px solid green;
+      width: 100%;
+      min-height: 115px;
+      border-radius: 9px;
+      border: 1px dashed #0967d2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        box-shadow: $coolBlueShadow;
+        cursor: pointer;
+      }
+
+      .titleBox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+
+        // .fileSvg {
+        // }
+        .titleText {
+          color: $blue500;
+          font-size: calc(0.875 * var(--glo7-font-size));
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .error {
+    color: red;
+  }
+}

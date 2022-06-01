@@ -1,0 +1,50 @@
+.ground {
+  // position: fixed;
+  display: flex;
+  // z-index: 100;
+  // left: 32px;
+  // top: 0px;
+  //   width: 30px;
+  //   height: 80px;
+  //   border: 1px solid red;
+
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+
+  .authSelect {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: -webkit-center;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    font-size: calc(0.75 * var(--glo7-font-size));
+    // width: 142px;
+    height: 18px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    color: rgb(92, 71, 46);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .optionOfAuthSelect {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
