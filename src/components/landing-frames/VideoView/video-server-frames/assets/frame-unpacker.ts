@@ -80,7 +80,7 @@ export const FrameUnpacker = async (options: IFrameUnpacker): Promise<ImageBitma
     padding = options.padding;
 
   const bitmaps: { id: number; bitmap: ImageBitmap }[] = [];
-  const calls: Promise<number>[] = []; // ::-:
+  const calls: Promise<number | void>[] = []; // ::-:
 
   const timeStart = performance.now();
 
@@ -101,7 +101,9 @@ export const FrameUnpacker = async (options: IFrameUnpacker): Promise<ImageBitma
         .then((blob) =>
           createImageBitmap(blob).then((bitmap) => bitmaps.push({ id: index, bitmap: bitmap })),
         ),
-    );
+    ).catch((err) => {
+      console.log(`Error downloading frame at index ${index} from url ${url}:`, err);
+    });
 
     calls.push(coolPromise);
   }

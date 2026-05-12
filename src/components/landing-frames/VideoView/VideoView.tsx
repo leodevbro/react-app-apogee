@@ -173,6 +173,7 @@ export const VideoView: React.FC<{
 
             <div ref={parentOfStickyRef} className={style.parentOfSticky}>
               <section ref={stickyRef} className={style.theSticky}>
+                <span style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>Loading...</span>
                 <input
                   ref={generalUrlInputRef}
                   name="frames-url"
